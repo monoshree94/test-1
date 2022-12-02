@@ -1,9 +1,9 @@
 pipeline {
-    agent { dockerfile true}
+    agent any 
     stages {
         stage('Example') {
             steps {
-                sh ' docker images '
+                docker build -t nginx1 .
             }
         }
     }
