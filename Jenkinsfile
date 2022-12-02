@@ -1,11 +1,9 @@
 pipeline {
-    agent any
+    agent { dockerfile true}
     stages {
         stage('Example') {
             steps {
-                script {
-                 docker ps -a
-                } 
+                sh ' docker images '
             }
         }
     }
