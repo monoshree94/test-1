@@ -3,10 +3,9 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                
-                
-                docker ps -a
-                
+                script {
+                 app = docker.build("nginx")
+                } 
             }
         }
     }
