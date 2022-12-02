@@ -4,7 +4,7 @@ pipeline {
         stage('Example') {
             steps {
                 script {
-                 app = docker.build("nginx")
+                 docker run -it -p 80:80 --name nginx nginx
                 } 
             }
         }
